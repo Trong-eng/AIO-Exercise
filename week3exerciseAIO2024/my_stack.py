@@ -18,3 +18,4 @@ class MyStack:
     if self.is_empty:
       return 'is empty'
     return self.stack[-1]
+  
