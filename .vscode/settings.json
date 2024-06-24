@@ -1,2 +1,6 @@
 {
+    "sonarlint.connectedMode.project": {
+        "connectionId": "trong-eng",
+        "projectKey": "Trong-eng_AIO-Exercise"
+    }
 }
