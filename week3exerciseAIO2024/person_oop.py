@@ -40,24 +40,24 @@ class Doctor(Person):
 class Ward:
     def __init__(self, name):
         self.__name = name
-        self.__listPeople = list()
+        self.__list_people = list() # type: ignore
 
     def add_person(self, person):
-        self.__listPeople.append(person)
+        self.__list_people.append(person)
 
     def describe(self):
         print(f"Ward Name: {self.__name}")
-        for p in self.__listPeople:
+        for p in self.__list_people:
             p.describe()
 
     def count_doctor(self):
-        return len([person for person in self.__listPeople if isinstance(person, Doctor)])
+        return len([person for person in self.__list_people if isinstance(person, Doctor)])
 
     def sort_age(self):
         self.__listPeople.sort(key=lambda person: person.get_yob(), reverse=True)
 
     def compute_average(self):
-        teachers = [person for person in self.__listPeople if isinstance(person, Teacher)]
+        teachers = [person for person in self.__list_people if isinstance(person, Teacher)]
         if not teachers:
             return 0
         return sum(person.get_yob() for person in teachers) / len(teachers)
